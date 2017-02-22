@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/authservice/authservice.iml" filepath="$PROJECT_DIR$/authservice/authservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/discoveryserver/discoveryserver.iml" filepath="$PROJECT_DIR$/discoveryserver/discoveryserver.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ictlab_chibb.iml" filepath="$PROJECT_DIR$/ictlab_chibb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sensordataservice/sensordataservice.iml" filepath="$PROJECT_DIR$/sensordataservice/sensordataservice.iml" />
+    </modules>
+  </component>
+</project>
