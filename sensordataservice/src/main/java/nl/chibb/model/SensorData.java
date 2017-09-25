@@ -1,52 +1,33 @@
 package nl.chibb.model;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * Created by dewijones on 9-5-2017.
  */
-
-public class SensorData {
+@Data
+@NoArgsConstructor
+public class SensorData implements Serializable {
 
     @Id
     private String id;
-
     private String name;
-    private double inputData;
+    private String sensorLocation;
+    private List<SensorInputData> inputData;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime localDateTime;
-
-    public SensorData(String name, double inputData, LocalDateTime localDateTime) {
-        this.name = name;
-        this.inputData = inputData;
-        this.localDateTime = localDateTime;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getInputData() {
-        return inputData;
-    }
-
-    public LocalDateTime getLocalDateTime() {
-        return localDateTime;
-    }
-
-    public void setLocalDateTime(LocalDateTime localDateTime) {
-        this.localDateTime = localDateTime;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Customer[id=%s, firstName='%s', inputData='%2.2f']", id, name, inputData);
-    }
-
-
 
 }

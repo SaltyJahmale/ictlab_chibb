@@ -10,4 +10,5 @@ import java.util.List;
 public interface SensorDataRepository extends MongoRepository<SensorData, String> {
 
     List<SensorData> getAllByName(String name);
+//    List<SensorData> getAllBySensorId(String name);
 }

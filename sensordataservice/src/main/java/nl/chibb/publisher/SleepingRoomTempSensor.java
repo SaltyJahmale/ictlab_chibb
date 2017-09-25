@@ -2,6 +2,9 @@ package nl.chibb.publisher;
 
 import com.google.gson.Gson;
 import nl.chibb.model.SensorData;
+import nl.chibb.model.SensorDataType;
+import nl.chibb.model.SensorInputData;
+import nl.chibb.model.SensorMeasurementType;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.slf4j.Logger;
@@ -13,7 +16,10 @@ import org.springframework.stereotype.Component;
 import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -38,12 +44,29 @@ public class SleepingRoomTempSensor {
         try {
 
             Random random = new Random();
-            LocalDateTime localDateTime = LocalDateTime.now();
+            LocalDateTime date = LocalDateTime.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+            String format = date.format(formatter);
+            LocalDateTime formatDateTime = LocalDateTime.parse(format, formatter);
 
             int MaxTempValue = 20;
             int MinTempValue = 10;
 
-            SensorData sensorData = new SensorData("Sleeping Room", random.nextDouble() + Math.random() * ( MaxTempValue - MinTempValue ), localDateTime);
+            SensorInputData sensorInputData = new SensorInputData();
+            sensorInputData.setSensorDataType(SensorDataType.TEMP);
+            sensorInputData.setSensoreMeasurement(SensorMeasurementType.CELSIUS);
+            sensorInputData.setInputData(random.nextDouble() + Math.random() * ( MaxTempValue - MinTempValue ));
+            sensorInputData.setLocalDateTime(formatDateTime);
+
+            List<SensorInputData> sensorInputDataList = new ArrayList<>();
+            sensorInputDataList.add(sensorInputData);
+
+            SensorData sensorData = new SensorData();
+            sensorData.setName("SleepingRoom1");
+            sensorData.setSensorLocation("SleepingRoom");
+            sensorData.setInputData(sensorInputDataList);
+            sensorData.setLocalDateTime(formatDateTime);
+
             Gson gson = new Gson();
             String jsonFormat = gson.toJson(sensorData);
 

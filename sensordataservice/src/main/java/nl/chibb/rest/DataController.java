@@ -24,7 +24,16 @@ public class DataController {
      */
     @CrossOrigin
     @RequestMapping(value = "/data/{name}", method = RequestMethod.GET)
-    public List<SensorData> getAllDataList(@PathVariable String name) {
+    public List<SensorData> getAllDataFromRoom(@PathVariable String name) {
         return sensorDataRepository.getAllByName(name);
     }
+
+//    @CrossOrigin
+//    @RequestMapping(value = "/data/node/{nameNode}", method = RequestMethod.GET)
+//    public List<SensorData> getAllDataFromOneNode(@PathVariable String nameNode) {
+//        return sensorDataRepository.getAllBySensorId(nameNode);
+//    }
+
+//    TODO: run dummy data & test REST
+
 }
