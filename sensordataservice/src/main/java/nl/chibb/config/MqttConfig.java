@@ -22,7 +22,7 @@ public class MqttConfig {
     @Bean
     public MqttClient mqttClient() throws MqttException {
 
-        final String broker = "tcp://172.18.0.3:1883"   ;
+        final String broker = "tcp://172.18.0.4:1883"   ;
         final String clientId = MqttClient.generateClientId();
         final MemoryPersistence persistence = new MemoryPersistence();
         final MqttClient sampleClient = new MqttClient(broker, clientId, persistence);

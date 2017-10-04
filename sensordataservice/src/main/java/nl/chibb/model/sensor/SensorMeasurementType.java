@@ -1,4 +1,4 @@
-package nl.chibb.model;
+package nl.chibb.model.sensor;
 
 /**
  * Created by djones on 9/25/17.

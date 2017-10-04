@@ -1,7 +1,7 @@
 package nl.chibb.subscriber;
 
 import com.google.gson.Gson;
-import nl.chibb.model.SensorData;
+import nl.chibb.model.sensor.SensorData;
 import nl.chibb.repository.SensorDataRepository;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallback;

@@ -6,7 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="authservice" />
         <module name="discoveryserver" />
         <module name="ictlab_chibb" />
         <module name="sensordataservice" />
@@ -15,6 +14,7 @@
     <bytecodeTargetLevel>
       <module name="authservice" target="1.8" />
       <module name="discoveryserver" target="1.8" />
+      <module name="discoveryservice" target="1.8" />
       <module name="ictlab" target="1.8" />
       <module name="ictlab_chibb" target="1.8" />
       <module name="sensordataservice" target="1.8" />

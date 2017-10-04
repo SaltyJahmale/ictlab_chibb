@@ -12,8 +12,6 @@
 	<description>Smart house</description>
 
     <modules>
-        <module>authservice</module>
-        <module>discoveryserver</module>
         <module>sensordataservice</module>
     </modules>
 

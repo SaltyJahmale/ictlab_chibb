@@ -1,4 +1,4 @@
-package nl.chibb.model;
+package nl.chibb.model.sensor;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;

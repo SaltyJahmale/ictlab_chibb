@@ -1,6 +1,6 @@
 package nl.chibb.rest;
 
-import nl.chibb.model.SensorData;
+import nl.chibb.model.sensor.SensorData;
 import nl.chibb.repository.SensorDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

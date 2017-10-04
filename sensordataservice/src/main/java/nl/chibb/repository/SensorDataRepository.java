@@ -1,6 +1,6 @@
 package nl.chibb.repository;
 
-import nl.chibb.model.SensorData;
+import nl.chibb.model.sensor.SensorData;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.List;
 

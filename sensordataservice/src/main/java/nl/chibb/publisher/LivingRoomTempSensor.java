@@ -1,10 +1,10 @@
 package nl.chibb.publisher;
 
 import com.google.gson.Gson;
-import nl.chibb.model.SensorData;
-import nl.chibb.model.SensorDataType;
-import nl.chibb.model.SensorInputData;
-import nl.chibb.model.SensorMeasurementType;
+import nl.chibb.model.sensor.SensorData;
+import nl.chibb.model.sensor.SensorDataType;
+import nl.chibb.model.sensor.SensorInputData;
+import nl.chibb.model.sensor.SensorMeasurementType;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.slf4j.Logger;
